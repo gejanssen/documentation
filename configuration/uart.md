@@ -1,5 +1,7 @@
 # The Raspberry Pi UARTS
 
+With the introduction of the Raspberry Pi with bluetooth, the design of the serial port changed. The design of the UARTS changed from PL011 to mini-UART to accommedate multiple serial ports.
+
 The SoC's used on the Raspberry Pi's have two built in UARTS, a [PL011](http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0183g/index.html) and a mini-UART. As they are implemented using different hardware blocks, they have slightly different characteristics. However, both are 3v3 devices, which means extra care must be taken when connecting up to an RS232 or other system that ustilises different voltage levels. An adapter must be used to convert the voltage levels between the two protocols. Alternatively, 3v3 USB UART adapters can be purchased for very low prices. 
  
 By default, on Raspberry Pi's equipped with the Wireless/Bluetooth module (Raspberry Pi 3 and Raspberry Pi Zero W), the PL011 UART is connected to the BT/Wireless module, whilst the mini-UART is used for Linux console output, on all other models the PL011 is used for the Linux console output. 
